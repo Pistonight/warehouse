@@ -1,0 +1,16 @@
+[
+{
+  "modid": "assemblycarts",
+  "name": "Assembly Carts",
+  "description": "A Minecraft mod that supports full automation with minecarts!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/iTNTPiston/AssemblyCarts",
+  "updateUrl": "",
+  "authorList": ["iTNTPiston"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
