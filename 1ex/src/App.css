@@ -1,0 +1,240 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+
+.line-number{
+    width: 3em;
+    text-align: right;
+    border-right: 1px solid grey;
+}
+
+tr:nth-child(even) {background-color: #eeeeee}
+
+.counter{
+    width:2em;
+    text-align: right;
+}
+
+.counter-color-shrine{
+    background-color: cyan;
+}
+
+.counter-color-korok{
+    background-color: #00ee00;
+}
+
+.counter-color-memory{
+    background-color: orange;
+}
+
+.counter-color-boss{
+    background-color: lightcoral;
+}
+
+.step-number{
+    width:1em;
+    text-align: right;
+    background-color: #001a00;
+    color:thistle;
+}
+
+.icon {
+    width:2.5em;
+    background-color: #001a00;
+}
+
+.main-text{
+    width:11em;
+    color:white;
+    background-color: #001a00;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comment-text{
+    font-size:12pt;
+}
+
+.section-header {
+    color: yellow;
+    font-size: 24pt;
+    margin-top:0.5em;
+    margin-bottom: 0.25em;
+}
+
+.indicator {
+    width:1em;
+}
+
+.indicator-color-split{
+    background-color: thistle;
+}
+
+.indicator-color-step{
+    background-color: lightgreen;
+}
+
+.indicator-color-none{
+    background-color: transparent;
+}
+
+.indicator-color-error {
+    background-color:red;
+}
+
+.indicator-color-warning {
+    background-color:orange;
+}
+
+.detail {
+    width:30em;
+    max-width:30em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.image-column {
+    height: 100%
+} 
+
+.route-image {
+    height: auto;
+    width: 100%;
+}
+
+.detail-box{
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    vertical-align: top;
+}
+
+.detail-box-bottom-border{
+    border-bottom: 1px solid black;
+}
+
+.image-box {
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.font-number {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    font-weight: bold;
+  }
+
+.fixed-control {
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+.color-yellow {
+    color: yellow
+}
+
+.color-item {
+    color: yellow
+}
+
+.color-important {
+    color: magenta
+}
+
+.color-location {
+    color: cyan
+}
+
+.color-enemy {
+    color: cyan
+}
+
+.color-npc {
+    color: #00ee00;
+}
+
+.color-rune {
+    color: orange;
+}
+
+.color-boss {
+    color: orange;
+}
+
+.color-gale {
+    color: #000;
+    background-color: #00ee00;
+}
+
+.color-fury {
+    color: orange;
+}
+
+.color-direction-compass {
+    color: yellow
+}
+
+.color-direction-clock {
+    color: yellow
+}
+
+.color-variable{
+    color:darkred
+}
+
+.main-text .color-variable{
+    color:pink
+}
+
+.color-sm{
+    font-size: 12pt;
+}
+
+.color-bg{
+    font-size: 16pt;
+}
+
+.frozen-image{
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 50vw;
+    max-height: 95vh;
+    cursor: pointer;
+}
+
+button {
+    padding: 0;
+}
+
+@media(max-width:400px){
+    .detail{
+        display:none;
+    }
+}
+
+@media(max-width:1000px){
+    .image-column {
+        display:none
+    }
+    .line-number{
+        display:none
+    }
+    .detail {
+        width: unset;
+        max-width: 5em;
+    }
+    .detail-box{
+        border-right: none;
+    }
+}
+

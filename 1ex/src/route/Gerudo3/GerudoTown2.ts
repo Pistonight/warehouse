@@ -1,0 +1,102 @@
+import { Boss, fury, important,  Koroks, Materials, Memories, Npc, Shop, Shrines, Warp, WindbombStepCps } from "../../engine";
+
+export const GerudoTown2 = [
+	Warp("Travel Medallion"),
+	Npc("Hudson Twice", "20 Wood"),
+	WindbombStepCps("E"),
+	Koroks.A38,
+	Warp("Naboris"),
+	"Run down bridge",
+	Koroks.W33,
+	WindbombStepCps("S> Turn"),
+	Koroks.W38,
+	WindbombStepCps("E Turn left"),
+	Koroks.W39,
+	WindbombStepCps("S> Turn"),
+	Boss("Luminous Talus", fury()).extend({
+		ability: { fury: 3 },
+		notes: "If fury not ready, might want to save a fury from earlier"
+	}),
+	{
+		important: true,
+		text: important("BURN OUT FURY")
+	},
+	WindbombStepCps("<S Turn"),
+	Koroks.W58,
+	WindbombStepCps("N> Turn"),
+	Koroks.W50,
+	"Drop down",
+	Koroks.W49,
+	WindbombStepCps("W Turn"),
+	Koroks.W48,
+	WindbombStepCps("<W Turn"),
+	Koroks.W52,
+	WindbombStepCps("NW"),
+	Koroks.W44,
+	WindbombStepCps("NW"),
+	Koroks.W37,
+	WindbombStepCps("W Turn"),
+	Koroks.W43,
+	WindbombStepCps("<W Turn"),
+	Shrines.RaqaZunzo,
+
+	WindbombStepCps("N"),
+	Npc("Boots Guy", "3 Times"),
+	"Run to GSC",
+	Npc("GSC", "3334"),
+	WindbombStepCps("W"),
+	Koroks.W42,
+	"Drop down",
+	Npc("Berry Lady", "Twice"),
+	Npc("Captain"),
+	Npc("Molduga Lady <2PM", "Twice"),
+	Npc("Trash Girl", "6AM - 8PM"),
+	Npc("Flint Lady"),
+	Shop("All Arrows"),
+	Npc("Riju", "B"),
+	WindbombStepCps("<<W Turn to Kara"),
+	{
+		important:true,
+		text:important("EQUIP PHANTOM 3")
+	},
+	Npc("Sandstorm Guy"),
+	Npc("Rhonson"),
+	Npc("Rito Guy"),
+	Memories.KaraKaraBazaar,
+
+	WindbombStepCps(".N Turn"),
+	Materials.Tail(4, "Kill Camp"),
+	WindbombStepCps("W"),
+	Koroks.W17,
+	WindbombStepCps("N"),
+	Shrines.DaqoTah,
+
+	WindbombStepCps("<<E"),
+	Koroks.G34,
+	WindbombStepCps("GALE + E + E>").extend({
+		ability: { gale: 1},
+	}),
+	Boss("Luminous Talus", fury()).extend({
+		ability: { fury: 3 },
+	}),
+	WindbombStepCps("SQ <<S"),
+	Koroks.W19,
+	WindbombStepCps("SQ to pillar"),
+	Koroks.W15,
+	Materials.Rushroom(4, "Spin blizzard"),
+	Npc("Sesami"),
+	WindbombStepCps("S."),
+	Shrines.KayNoh,
+
+	WindbombStepCps("E> + <S"),
+	Koroks.W30,
+	WindbombStepCps("<S Turn"),
+	Koroks.W40,
+	WindbombStepCps("N> Turn"),
+	Koroks.W35,
+	Shrines.KorshOhu.extend({
+		splitPrefix: "{Gerudo 3}",
+		timeOverride: 60
+	}),
+
+];

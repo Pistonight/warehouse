@@ -1,0 +1,51 @@
+import { Discover, Koroks, SnapElite, Towers, Warp, WindbombStepCps } from "../../engine";
+
+export const CentralTower = [
+	Warp("Etsu Korima"),
+	WindbombStepCps("<W Turn"),
+	Koroks.P15,
+	WindbombStepCps("SQ"),
+	Koroks.P14,
+	WindbombStepCps("GALE + .N").extend({
+		ability: { gale: 1 }
+	}),
+	Koroks.P07,
+	WindbombStepCps("SQ to river"),
+	Koroks.P08,
+	WindbombStepCps("N>"),
+	Koroks.P03,
+	WindbombStepCps("N super"),
+	Koroks.C80,
+	WindbombStepCps("SQ or midair"),
+	Koroks.C79,
+	WindbombStepCps("SQ to top of coliseum"),
+	Koroks.C74,
+	SnapElite("Silver Lynel"),
+	"Drop down",
+	Koroks.C73,
+	Koroks.C68,
+	WindbombStepCps("SQ to other side"),
+	Discover("Aquame Bridge"),
+	Koroks.C67,
+	WindbombStepCps(".W Turn"),
+	Koroks.C66,
+	WindbombStepCps("N. Turn"),
+	Discover("Gleeok Bridge"),
+	Koroks.C57,
+	WindbombStepCps("<N"),
+	Koroks.C52,
+	WindbombStepCps("<N"),
+	Koroks.R58,
+	WindbombStepCps("SQ over river"),
+	Koroks.C37,
+	WindbombStepCps("E> Turn"),
+	Koroks.C47,
+	Discover("Ancient Tree Stump"),
+	WindbombStepCps("GALE + <S").extend({
+		ability: { gale: 1 }
+	}),
+	Koroks.C53,
+	WindbombStepCps("<<E Turn"),
+	Towers.Central(),
+
+];
