@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="controller"
+            type="edu.rosehulman.todoheap.scheduledevent.controller.ScheduledEventController" />
+        <variable
+            name="model"
+            type="edu.rosehulman.todoheap.scheduledevent.input.ScheduledEventInputModel"/>
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".scheduledevent.ScheduledEventActivity"
+
+        >
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.TodoHeap.AppBarOverlay"
+
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/Theme.TodoHeap.PopupOverlay"
+                />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+        <ScrollView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+
+                <EditText
+                    android:id="@+id/input_event_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_event_name"
+                    android:text="@={model.eventName}"
+                    android:onFocusChange="@{(v,f)->controller.hideKeyboardOnLoseFocus(v,f)}"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:text="@={model.location}"
+                    android:hint="@string/form_location"
+                    android:onFocusChange="@{(v,f)->controller.hideKeyboardOnLoseFocus(v,f)}"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/form_start_time"
+                    style="@style/Theme.TodoHeap.FormDescription"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusableInTouchMode="true"
+                    >
+                    <Button
+                        android:layout_margin="5dp"
+                        android:backgroundTint="@color/button_grey"
+                        android:layout_width="0dp"
+                        android:layout_weight="6"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/format_date(model.startMonth+1,model.startDay,model.startYear)}"
+                        android:textColor="@color/black"
+                        android:onClick="@{()->controller.selectStartDate()}" />
+
+                    <Button
+                        android:layout_margin="5dp"
+                        android:backgroundTint="@color/button_grey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:text="@{model.startPm?@string/format_time_pm(model.startHourIn12,model.startMinute):@string/format_time_am(model.startHourIn12,model.startMinute)}"
+                        android:textColor="@color/black"
+                        android:onClick="@{()->controller.selectStartTime()}" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/form_end_time"
+                    style="@style/Theme.TodoHeap.FormDescription"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusableInTouchMode="true"
+                    >
+                    <Button
+                        android:layout_margin="5dp"
+                        android:backgroundTint="@color/button_grey"
+                        android:layout_width="0dp"
+                        android:layout_weight="6"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/format_date(model.endMonth+1,model.endDay,model.endYear)}"
+                        android:textColor="@color/black"
+                        android:onClick="@{()->controller.selectEndDate()}" />
+
+                    <Button
+                        android:layout_margin="5dp"
+                        android:backgroundTint="@color/button_grey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:text="@{model.endPm?@string/format_time_pm(model.endHourIn12,model.endMinute):@string/format_time_am(model.endHourIn12,model.endMinute)}"
+                        android:textColor="@color/black"
+                        android:onClick="@{()->controller.selectEndTime()}" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/form_repeat"
+                    style="@style/Theme.TodoHeap.FormDescription"
+                    />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <LinearLayout
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content"
+                       android:orientation="vertical">
+                       <CheckBox
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="@string/form_mon"
+                           android:onClick="@{(v)->controller.hideKeyboard(v)}"
+                           android:checked="@={model.repeatMonday}"
+                           />
+                       <CheckBox
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="@string/form_tue"
+                           android:onClick="@{(v)->controller.hideKeyboard(v)}"
+                           android:checked="@={model.repeatTuesday}"
+                           />
+                       <CheckBox
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="@string/form_wed"
+                           android:onClick="@{(v)->controller.hideKeyboard(v)}"
+                           android:checked="@={model.repeatWednesday}"
+                           />
+                       <CheckBox
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="@string/form_thu"
+                           android:onClick="@{(v)->controller.hideKeyboard(v)}"
+                           android:checked="@={model.repeatThursday}"
+                           />
+                       <CheckBox
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="@string/form_fri"
+                           android:onClick="@{(v)->controller.hideKeyboard(v)}"
+                           android:checked="@={model.repeatFriday}"
+                           />
+                   </LinearLayout>
+                   <LinearLayout
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content"
+                       android:orientation="vertical">
+                       <CheckBox
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="@string/form_sat"
+                           android:onClick="@{(v)->controller.hideKeyboard(v)}"
+                           android:checked="@={model.repeatSaturday}"
+                           />
+                       <CheckBox
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="@string/form_sun"
+                           android:onClick="@{(v)->controller.hideKeyboard(v)}"
+                           android:checked="@={model.repeatSunday}"
+                           />
+
+                   </LinearLayout>
+
+               </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

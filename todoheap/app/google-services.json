@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1064652350581",
+    "project_id": "todoheap",
+    "storage_bucket": "todoheap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064652350581:android:1615767a18a76b910c043c",
+        "android_client_info": {
+          "package_name": "edu.rosehulman.todoheap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064652350581-pnen1t8v3lt7ht0642ncnseb886ad75p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-q95MkGQq7Wkeadp9_x6LaRTnthEplXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064652350581-pnen1t8v3lt7ht0642ncnseb886ad75p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

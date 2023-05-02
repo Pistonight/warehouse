@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="edu.rosehulman.todoheap.tasks.view.TaskCardViewModel" />
+        <variable
+            name="controller"
+            type="edu.rosehulman.todoheap.tasks.controller.TaskCardController" />
+    </data>
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:onClick="@{() -> controller.onClick()}"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.taskName}"
+                android:padding="3dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/due_warning"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.pastDue?@string/text_past_due:@string/text_due_soon}"
+                android:padding="3dp"
+                android:textSize="18sp"
+                android:textColor="@color/red"
+                android:visibility="@{viewModel.showDueWarning?View.VISIBLE:View.GONE}"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/due_warning"
+                android:src="@drawable/ic_outline_info_24"
+                app:tint="@color/red"
+                android:visibility="@{viewModel.showDueWarning?View.VISIBLE:View.GONE}"/>
+            <LinearLayout
+                android:id="@+id/task_detail"
+                android:layout_below="@id/task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@plurals/format_hour(viewModel.workloadInt,viewModel.workload)}"
+                    android:padding="3dp"
+                    android:textColor="@color/grey_text"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.location}"
+                    android:padding="3dp"
+                    android:textColor="@color/grey_text"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_due"
+                    android:padding="3dp"
+                    android:textColor="@color/grey_text"
+                    android:visibility="@{viewModel.showDue?View.VISIBLE:View.GONE}"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.showDueYear?@string/format_date_compact(viewModel.dueMonth+1,viewModel.dueDay, viewModel.dueYear):@string/format_date_compact_noyear(viewModel.dueMonth+1,viewModel.dueDay)}"
+                    android:padding="3dp"
+                    android:textColor="@color/grey_text"
+                    android:visibility="@{viewModel.showDue?View.VISIBLE:View.GONE}"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@stringArray/title_day_of_week[viewModel.dueDayOfWeekIndex]}"
+                    android:padding="3dp"
+                    android:textColor="@color/grey_text"
+                    android:visibility="@{viewModel.showDueDayOfWeekAndTime?View.VISIBLE:View.GONE}"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.pm?@string/format_time_pm(viewModel.hourIn12, viewModel.dueMinute):@string/format_time_am(viewModel.hourIn12, viewModel.dueMinute)}"
+                    android:padding="3dp"
+                    android:textColor="@color/grey_text"
+                    android:visibility="@{viewModel.showDueDayOfWeekAndTime?View.VISIBLE:View.GONE}"/>
+            </LinearLayout>
+            <TextView
+                android:layout_below="@id/task_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_conflict_one_sitting"
+                android:padding="3dp"
+                android:textColor="@color/red"
+                android:visibility="@{viewModel.oneSittingConflict?View.VISIBLE:View.GONE}"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
+

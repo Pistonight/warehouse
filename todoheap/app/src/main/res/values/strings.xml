@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">TodoHeap</string>
+    <string name="channel_name">TodoHeap Channel</string>
+    <string name="channel_description">TodoHeap Channel Description</string>
+    <string name="title_tasks">Tasks</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_account">Account</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_add_free_event">Add Free Event</string>
+    <string name="title_edit_free_event">Edit Free Event</string>
+    <string name="title_add_scheduled_event">Add Scheduled Event</string>
+    <string name="title_edit_scheduled_event">Edit Scheduled Event</string>
+
+
+    <string name="title_dialog_date">Set Date</string>
+    <string name="title_dialog_time">Set Time</string>
+    <string name="title_dialog_error">Error</string>
+    <string name="title_dialog_confirm">Confirm</string>
+
+    <string name="form_event_name">Event Name*</string>
+    <string name="form_location">Location</string>
+    <string name="form_deadline">Deadline</string>
+    <string name="form_no_deadline_desc">This event has no deadline</string>
+    <string name="form_work_load">Work load (In Hours)*</string>
+    <string name="form_no_one_sitting_desc">This work can be done in multiple sessions</string>
+    <string name="form_one_sitting_desc">This work must be done in one sitting</string>
+    <string name="form_procrastination_desc">I would like to do this</string>
+    <string name="form_enjoyablility_desc">How enjoyable is this activity?</string>
+    <string name="form_priority_desc">How important is this activity?</string>
+    <string-array name="form_procrastination_options">
+        <item>As soon as possible</item>
+        <item>Neutral</item>
+        <item>The later the better</item>
+    </string-array>
+    <string-array name="form_enjoyability_options">
+        <item>Quite enjoyable</item>
+        <item>Neutral</item>
+        <item>Not enjoyable</item>
+    </string-array>
+    <string-array name="form_priority_options">
+        <item>Very important</item>
+        <item>Neutral</item>
+        <item>Not as important</item>
+    </string-array>
+    <string name="form_start_time">Starts</string>
+    <string name="form_end_time">Ends</string>
+    <string name="form_repeat">Repeats on</string>
+    <string-array name="title_day_of_week">
+        <item>MON</item>
+        <item>TUE</item>
+        <item>WED</item>
+        <item>THU</item>
+        <item>FRI</item>
+        <item>SAT</item>
+        <item>SUN</item>
+    </string-array>
+    <string name="form_mon">MON</string>
+    <string name="form_tue">TUE</string>
+    <string name="form_wed">WED</string>
+    <string name="form_thu">THU</string>
+    <string name="form_fri">FRI</string>
+    <string name="form_sat">SAT</string>
+    <string name="form_sun">SUN</string>
+
+    <string name="format_date">%d / %d / %d</string>
+    <string name="format_date_dow">%d / %d / %d %s</string>
+    <string name="format_date_compact">%d/%d/%d</string>
+    <string name="format_date_compact_noyear">%d/%d</string>
+    <string name="format_time_am">%d:%02d AM</string>
+    <string name="format_time_pm">%d:%02d PM</string>
+    <string name="format_time">%d:%02d</string>
+    <plurals name="format_hour">
+        <item quantity="one">%.02f hour</item>
+        <item quantity="other">%.02f hours</item>
+    </plurals>
+
+
+    <string name="action_add_free_event">Add Free Event</string>
+    <string name="action_add_scheduled_event">Add Scheduled Event</string>
+    <string name="action_save">Save</string>
+    <string name="sign_in">sign in</string>
+    <string name="sign_out">sign out</string>
+
+    <string name="error_event_name_empty">Event name cannot be empty</string>
+    <string name="error_work_load_empty">Work load cannot be empty</string>
+    <string name="error_end_before_start">Start time must be before end time</string>
+    <string name="confirm_delete">Delete?</string>
+    <string name="text_due">Due</string>
+    <string name="text_due_soon">Due Soon</string>
+    <string name="text_past_due">Past Due</string>
+    <string name="text_pm">PM</string>
+    <string name="text_am">AM</string>
+    <string name="text_conflict_one_sitting">One Sitting Conflict</string>
+
+    <string-array name="free_notification_spinner_options">
+        <item>Once per 15 minutes</item>
+        <item>Once per hour</item>
+        <item>Once per 12 hours</item>
+        <item>Once per day</item>
+    </string-array>
+
+    <string name="notification_summary_title">TodoHeap Summary</string>
+    <string name="format_notification_summary_count">You have %d events on your todo heap</string>
+    <string name="form_notification">Summary Notification</string>
+    <string name="form_notification_description">Enable TodoHeap to send summary by notification</string>
+    <string name="setting_sorting_preference">Sorting Preference</string>
+    <string name="form_notification_summary_description">How often should we give you a summary?</string>
+    <string name="form_enjoyability">Enjoyability</string>
+    <string name="form_order_enjoyability_neg">Less enjoyable first</string>
+    <string name="form_enjoyability_order_pos">More enjoyable first</string>
+    <string name="form_workload">Workload</string>
+    <string name="form_workload_order_neg">Longer task first</string>
+    <string name="form_workload_order_pos">Shorter task first</string>
+    <string name="form_duetime">Time until due</string>
+    <string name="form_duetime_order_neg">Less urgent first</string>
+    <string name="form_duetime_order_pos">More urgent first</string>
+    <string name="form_priority">Priority</string>
+    <string name="form_priority_order_neg">Less important first</string>
+    <string name="form_priority_order_pos">More important first</string>
+    <string name="form_procrastination">Schedule \"As Soon As Possible\"</string>
+    <string name="form_procrastination_order_neg">Last</string>
+    <string name="form_procrastination_order_pos">First</string>
+
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#FF0094FF</color>
+    <color name="secondary">#41AFFF</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FFFF0000</color>
+    <color name="grey_background">#FFD9D9D9</color>
+    <color name="button_grey">#EDEDED</color>
+    <color name="button_grey_disabled">#CFCFCF</color>
+    <color name="bottom_nav_background">#FFEEEEEE</color>
+    <color name="grey_text">#FFAAAAAA</color>
+</resources>
