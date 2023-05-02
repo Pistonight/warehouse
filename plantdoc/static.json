@@ -1,0 +1,12 @@
+{
+  "root": "build/",
+  "routes": {
+    "/**": "index.html"
+  },
+  "https_only": true,
+  "proxies": {
+    "/api/": {
+      "origin": "https://plantuml-doc-integration-api.herokuapp.com/api"
+    }
+  }
+}
